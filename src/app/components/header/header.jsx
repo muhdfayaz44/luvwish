@@ -1,7 +1,7 @@
 import { BsGift } from "react-icons/bs";
 import styles from "./header.module.css";
 import Link from "next/link";
-
+import Image from "next/image";
 export default function Header() {
 
 return (
@@ -15,12 +15,12 @@ return (
          <nav className={styles.navBar}>
             <div className={styles.navContainer}>
                 <Link href="/" className={styles.brandName}>
-                    <img className="logo"
-                        src="logo.png"
+                    <Image className="logo"
+                        src="/logo.png"
                         alt="Logo.png"
                         width={130}
-                        height={34}>
-                     </img>
+                        height={34}
+                     />
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>

@@ -1,14 +1,15 @@
 import { FaInstagram, FaFacebookF, FaTwitter, FaEnvelope } from "react-icons/fa";
 import styles from "./footer.module.css"
+import Image from "next/image";
 
 export default function Footer() {
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.footerTop}>
                 <div className={styles.footerBrand}> 
-                    <img 
+                    <Image
                         className={styles.footerLogo}
-                        src="logo.png" 
+                        src="/logo.png" 
                         alt="Logo"
                         width={150}
                         height={50} />

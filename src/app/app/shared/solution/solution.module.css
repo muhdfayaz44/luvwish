@@ -1,0 +1,227 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem 7rem;
+}
+
+.top {
+    text-align: left;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(90deg, #FFF0F7 0%, #FDF2F8 100%);
+    border: 2px solid #FFCCE0;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #d63384;
+    margin-bottom: 1rem;
+}
+
+.badge .icon {
+    font-size: 1.2rem;
+}
+
+.heading {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.heading span {
+    color: #C61469;
+}
+
+.subtext {
+    color: #6c757d;
+    font-size: 18px;
+    max-width: 500px;
+    line-height: 29px;
+}
+
+.bottom {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid #FFE5EF;
+    color: #000;
+    background-color: transparent;
+    width: 100%;
+    max-width: 489px;
+    height: 81px;
+}
+
+.cardIcon {
+    font-size: 2rem;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    font-weight: 600;
+    margin: 0;
+    color: #0F0F12;
+    font-size: 16px;
+}
+
+.cardDesc {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #6B6B76;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 772px;
+    height: 515px;
+    border-radius: 12px;
+}
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 1200px) {
+    .container {
+        padding: 2rem 3rem;
+    }
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .subtext {
+        font-size: 16px;
+        line-height: 26px;
+        max-width: 100%;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        align-items: center;
+    }
+
+    .card {
+        max-width: 400px;
+        height: 80px;
+    }
+
+    .image {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+    .subtext {
+        font-size: 15px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .bottom {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .cardText {
+        text-align: center;
+        align-items: center;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 24px;
+    }
+
+    .badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        padding: 0.8rem;
+    }
+
+    .cardIcon {
+        margin-bottom: 0.5rem;
+    }
+
+    .cardText {
+        align-items: center;
+        text-align: center;
+    }
+
+    .subtext {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
