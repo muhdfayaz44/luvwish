@@ -31,7 +31,7 @@
     margin: 0 4px;
 }
 
-.navBar {
+.navbar {
     padding: 10px 40px;
     background: #fff0f5;
     display: flex;
@@ -89,10 +89,90 @@
     padding: 8px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 10px;
 }
 
 .loginButton:hover {
     background-color: #821044;
+}
+
+.registerButton {
+    border-radius: 20px;
+    background-color: #A51058;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registerButton:hover {
+    background-color: #821044;
+}
+
+
+.userSection {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.userIcons {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    color: #1F1F1F;
+}
+
+.userIcons li,
+.mobileUserIcons li {
+    background-color: #FFE4EF;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: #1F1F1F;
+}
+
+.userIcons li:hover,
+.mobileUserIcons li:hover {
+    background-color: #A51058;
+    color: white;
+}
+
+.userIcons li button,
+.mobileUserIcons li button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFE4EF;
+    color: #1F1F1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.userIcons li button:hover,
+.mobileUserIcons li button:hover {
+    background-color: #A51058;
+    color: white;
+}
+
+.userIcons li button svg,
+.mobileUserIcons li button svg {
+    width: 16px;
+    height: 16px;
 }
 
 
@@ -134,7 +214,7 @@
         margin-left: auto;
     }
 
-    .loginBtn {
+    .loginButton {
         font-size: 14px;
         padding: 6px 15px;
     }

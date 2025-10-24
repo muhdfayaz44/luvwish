@@ -1,0 +1,77 @@
+.alertContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.alertBox {
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  max-width: 350px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.4s forwards, fadeOut 0.4s forwards 2.6s;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #4CAF50, #43A047);
+}
+
+.alert-error {
+  background: linear-gradient(135deg, #E53935, #D32F2F);
+}
+
+.alert-info {
+  background: linear-gradient(135deg, #2196F3, #1E88E5);
+}
+
+.alert-warning {
+  background: linear-gradient(135deg, #FFB300, #FFA000);
+}
+
+.alertIcon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.alertMessage {
+  flex: 1;
+}
+
+.premiumCloseBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.premiumCloseBtn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

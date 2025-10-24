@@ -1,9 +1,37 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./hero.module.css";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { useAlert } from "../../components/alert/alertProvider";
 
 export default function Hero() {
-    
+    const [showConfirm, setShowConfirm] = useState(false);
+    const promoCode = "COMBO25";
+    const { showAlert } = useAlert(); // ✅ use custom toast
+
+    const handleCopyClick = () => {
+        setShowConfirm(true); 
+    };
+
+    const confirmCopy = () => {
+        navigator.clipboard.writeText(promoCode); 
+        setShowConfirm(false);
+
+        // ✅ Show custom toast instead of alert
+        showAlert({
+            message: `Promo code "${promoCode}" copied!`,
+            type: "success",
+            autoDismiss: true,
+            duration: 3000
+        });
+    };
+
+    const cancelCopy = () => {
+        setShowConfirm(false);
+    };
+
     return (
         <>
             <div className={styles.heroContainer}>
@@ -28,8 +56,8 @@ export default function Hero() {
                         </p>
 
                         <div className={styles.promoCode}>
-                            <p>Use code: <span>COMBO25</span></p>
-                            <button className={styles.copyBtn}>Copy</button>
+                            <p>Use code: <span>{promoCode}</span></p>
+                            <button className={styles.copyBtn} onClick={handleCopyClick}>Copy</button>
                         </div>
 
                         <button className={styles.exploreBtn}>Explore Our Products</button>
@@ -37,11 +65,9 @@ export default function Hero() {
                         <div className={styles.reviewSection}>
                             <div className={styles.rating}>
                                 <div className={styles.stars}>
-                                    <FaStar color="#ff4c8b" />
-                                    <FaStar color="#ff4c8b" />
-                                    <FaStar color="#ff4c8b" />
-                                    <FaStar color="#ff4c8b" />
-                                    <FaStar color="#ff4c8b" />
+                                    {[...Array(5)].map((_, i) => (
+                                        <FaStar key={i} color="#ff4c8b" />
+                                    ))}
                                 </div>
                                 <p>4.9/5 from 12k+ reviews</p>
                             </div>
@@ -58,6 +84,20 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+
+            {/* Confirmation Popup */}
+            {showConfirm && (
+                <div className={styles.overlay}>
+                    <div className={styles.confirmCard}>
+                        <h3>Copy Promo Code?</h3>
+                        <p>Do you want to copy <strong>{promoCode}</strong> to your clipboard?</p>
+                        <div className={styles.confirmButtons}>
+                            <button onClick={confirmCopy} className={styles.yesBtn}>Yes</button>
+                            <button onClick={cancelCopy} className={styles.noBtn}>No</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
